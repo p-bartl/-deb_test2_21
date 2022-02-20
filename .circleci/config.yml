@@ -1,0 +1,60 @@
+version: 2.1
+orbs:
+  # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
+  node: circleci/node@4.1.0
+  aws-cli: circleci/aws-cli@1.3.1
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+  # different jobs are called later in the workflows sections
+jobs:
+  build:
+    docker:
+      # the base image can run most needed actions with orbs
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - aws-cli/setup
+      - eb/setup
+      # install dependencies in the apps
+      - run:
+          name: Frontend Install
+          command: |
+            npm run frontend:install
+      - run:
+          name: Backendend Install
+          command: |
+            npm run backend:install
+      # Build Front-End and Back-End
+      - run:
+          name: Frontend Build
+          command: |
+            npm run frontend:build
+      - run:
+          name: Backendend Build
+          command: |
+            npm run backend:build
+      # Run Front-End and Back-End Tests
+      - run:
+          name: Frontend Test
+          command: |
+            npm run frontend:test
+      - run:
+          name: Backend Test
+          command: |
+            npm run backend:test
+      # Deploy Front-End and Back-End
+      - run:
+          name: Deploy Frontend
+          command: |
+            npm run frontend:deploy
+      - run:
+          name: Deploy Backend
+          command: |
+            npm run backend:deploy
+workflows:
+  Udagram-udacity:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master

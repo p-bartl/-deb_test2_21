@@ -3,6 +3,7 @@
 This is the final project of the UDACITY Full Stack Javascript Nanodegree.
 
 Please visit the frontend by following this link:
+http://udagram-backend-5655662366326.s3-website-us-east-1.amazonaws.com
 
 
 The following env variables must be set:

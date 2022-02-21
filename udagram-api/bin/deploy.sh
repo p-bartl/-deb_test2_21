@@ -1,1 +1,1 @@
-aws s3 cp --recursive --acl public-read ./build s3://udagram-backend-5655662366326/
+eb init Udagramapp --region us-east-1 && eb use Udagramapp-env && eb deploy Udagramapp-env

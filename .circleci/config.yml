@@ -33,15 +33,6 @@ jobs:
           name: Backendend Build
           command: |
             npm run backend:build
-      # Run Front-End and Back-End Tests
-      - run:
-          name: Frontend Test
-          command: |
-            npm run frontend:test
-      - run:
-          name: Backend Test
-          command: |
-            npm run backend:test
       # Deploy Front-End and Back-End
       - run:
           name: Deploy Frontend

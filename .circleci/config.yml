@@ -42,11 +42,7 @@ jobs:
       - run:
           name: Deploy Backend
           command: |
-            echo "Deploying api to ebs."
-            cd ./udagram-api
-            eb init Udagramapp --region us-east-1
-            eb deploy Udagramapp-env
-            eb setenv -e Udagramapp-env AWS_ACCESS_KEY=$AWS_ACCESS_KEY AWS_BUCKET=$AWS_BUCKET AWS_PROFILE=$AWS_PROFILE AWS_REGION=$AWS_REGION AWS_SECRET=$AWS_SECRET JWT_SECRET=$JWT_SECRET PORT=$PORT POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_PORT=$POSTGRES_PORT POSTGRES_USERNAME=$POSTGRES_USERNAME URL=$URL
+            npm run backend:deploy
 workflows:
   -deb_test2_21:
     jobs:

@@ -29,6 +29,8 @@
     - Deploys Frontend
     - Deploys Backend
 
+![Alt text](screenshot/1_new.png?raw=true "Title")
+
 ### Backend
 - Build Backend
 - Upload to Source Code to AWS S3
@@ -37,8 +39,9 @@
 
 ### Frontend
 - Build Frontend
-- Upload to AWS S3
+- Upload to AWS S3 (Please note that the naming of the S3 bucket is a bit misleading since it does not include the word "frontend")
 
+![Alt text](screenshot/5.png?raw=true "Title")
 
 
 

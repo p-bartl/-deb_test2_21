@@ -10,7 +10,6 @@ The following env variables must be set:
 * AWS_ACCESS_KEY_ID
 * AWS_BUCKET
 * AWS_DEFAULT_REGION
-* AWS_PROFILE
 * AWS_SECRET_ACCESS_KEY
 * JWT_SECRET
 * PORT
